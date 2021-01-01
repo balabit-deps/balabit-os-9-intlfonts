@@ -1,0 +1,235 @@
+intlfonts (1.2.1-10.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Fri, 01 Jan 2021 16:17:40 +0100
+
+intlfonts (1.2.1-10) unstable; urgency=medium
+
+  * QA upload.
+  * Switch to debhelper 9.
+  * debian/*.conffiles: Remove because debhelper 9 takes care of that.
+  * Switch to "3.0 (quilt)" source format.
+  * Use gzip -9n in buildfonts.sh instead of GZIP in debian/rules,
+    as there are plans to deprecate the GZIP variable.
+  * debian/rules: Drop useless stuff.
+  * Change Build-Depends-Indep to Build-Depends (lintian warning).
+  * Add ${misc:Depends} to emacs-intl-fonts (lintian warning).
+  * Add build-arch and build-indep (lintian warning).
+  * emacs-intl-fonts Enhances: emacs24, not emacs21.
+  * Improve package descriptions. Closes: #681190.
+    Patch by Justin B Rye. Thanks a lot.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 13 Sep 2015 14:28:42 +0200
+
+intlfonts (1.2.1-9) unstable; urgency=medium
+
+  * QA upload.
+  * debian/compat: Explicitly add file with value of "1".
+  * debian/rules: Call buildfonts.sh with sh to save a chmod.
+  [ Chris Lamb ]
+  * debian/rules: Pass GZIP="-9n" to buildfonts.sh invocation.
+    Closes: #777012.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 27 Aug 2015 18:52:22 +0200
+
+intlfonts (1.2.1-8) unstable; urgency=high
+
+  * QA upload.
+  * Standard conform reloading services with invoke-rc.d.
+    Closes: #553137
+
+ -- Patrick Matthäi <pmatthaei@debian.org>  Sun, 01 Nov 2009 11:15:37 +0100
+
+intlfonts (1.2.1-7) unstable; urgency=low
+
+  * Orphaned.
+
+ -- Milan Zamazal <pdm@debian.org>  Mon, 18 May 2009 14:07:11 +0200
+
+intlfonts (1.2.1-6) unstable; urgency=low
+
+  * Build-depend on debhelper >= 5.0.31.
+  * Install fonts.alias files into /etc/X11/fonts/X11R7; closes: #364025.
+
+ -- Milan Zamazal <pdm@debian.org>  Fri, 21 Apr 2006 08:55:32 +0200
+
+intlfonts (1.2.1-5) unstable; urgency=low
+
+  * Move fonts to /usr/share/fonts/X11; closes: #362377, #362379, #362378,
+    #362380, #362384, #362385, #362402, #362382.
+  * Don't depend on xutils, use ${misc:Depends}.
+  * Build-depend on debhelper >= 5.0.29.
+  * Don't build-depend on xutils, build-depend on xfonts-utils.
+  * Standards 3.6.2 (no real change).
+
+ -- Milan Zamazal <pdm@debian.org>  Mon, 17 Apr 2006 16:19:07 +0200
+
+intlfonts (1.2.1-4) unstable; urgency=low
+
+  * Declared widths of some European fonts fixed; thanks to
+    Johan Kullstam <kullstj-nn@comcast.net>; closes: #342795.
+  * Information about additional Simplified Chinese fonts added to
+    README.Debian; thanks to J. Grant <jg@jguk.org>.
+
+ -- Milan Zamazal <pdm@debian.org>  Wed, 21 Dec 2005 10:58:03 +0100
+
+intlfonts (1.2.1-3) unstable; urgency=low
+
+  * Use invoke-rc.d instead of direct invocation of init scripts;
+    closes: #262623.
+  * Standards 3.6.1 (no real change).
+
+ -- Milan Zamazal <pdm@debian.org>  Sun,  1 Aug 2004 11:16:03 +0200
+
+intlfonts (1.2.1-2) unstable; urgency=low
+
+  * Package descriptions improved, thanks to Marek Habersack
+    <grendel@debian.org>; closes: #210053, #210178.
+
+ -- Milan Zamazal <pdm@debian.org>  Fri, 12 Dec 2003 12:15:24 +0100
+
+intlfonts (1.2.1-1) unstable; urgency=high
+
+  * New upstream release.
+  * Upstream: Fonts with serious license violation removed; see bug
+    #214401.
+
+ -- Milan Zamazal <pdm@debian.org>  Tue,  7 Oct 2003 08:52:24 +0200
+
+intlfonts (1.2-5) unstable; urgency=low
+
+  * xfs-xtt reload added as well; closes: #176593.
+  * emacs-intl-fonts: Redundant fonts removed; info about excluded fonts
+    added to README.Debian; closes: #191083.
+  * Closing dots removed from short package descriptions.
+  * Use dh_installxfonts.
+  * `postrm' and `prerm' removed.
+  * Standards 3.6.0 (no change).
+  * Lintian 1.22.8.1 satisfied.
+
+ -- Milan Zamazal <pdm@debian.org>  Thu, 24 Jul 2003 09:01:37 +0200
+
+intlfonts (1.2-4) unstable; urgency=low
+
+  * xfs reload added to postinst; closes: #160913.
+
+ -- Milan Zamazal <pdm@zamazal.org>  Mon, 13 Jan 2003 09:28:54 +0100
+
+intlfonts (1.2-3) unstable; urgency=low
+
+  * Standards 3.5.6.
+  * Depend on xutils>>4.0.3.
+  * New binary package: emacs-intl-fonts; closes: #150620.
+  * Build-Depends changed to Build-Depends-Indep.
+
+ -- Milan Zamazal <pdm@debian.org>  Mon, 12 Aug 2002 17:54:45 +0200
+  
+intlfonts (1.2-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Make /etc/X11/fonts/misc/xfonts-intl-{chinese,european,japanese}.alias
+    conffiles (closes: #132091, #132161, #132172).
+
+ -- Colin Watson <cjwatson@debian.org>  Sat,  9 Feb 2002 15:00:49 +0000
+  
+intlfonts (1.2-2) unstable; urgency=low
+
+  * Additional Chinese font aliases put back; closes: #97027.
+  * Directory test in postrm fixed; closes: #97243.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun, 13 May 2001 17:35:36 +0200
+
+intlfonts (1.2-1) unstable; urgency=low
+
+  * New upstream release; closes: #65201, #93970.
+  * Standards 3.5.3.
+  * add-log-mailing-address removed from this changelog.
+  * Depend and build-depend on xutils.
+  * rm debian build directories with `-f'.
+  * Apply dh_clean on all packages.
+  * Add `-is -ip' to dpkg-gencontrol.
+  * No lintian 1.20.13 errors.
+
+ -- Milan Zamazal <pdm@debian.org>  Tue,  8 May 2001 20:16:40 +0200
+
+intlfonts (1.1-9) frozen unstable; urgency=low
+
+  * xfonts-intl-european: Typo in Suggests fixed; closes: #59180.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun,  5 Mar 2000 09:48:44 +0100
+
+intlfonts (1.1-8) unstable; urgency=low
+
+  * Do not remove alias file in postrm of packages without alias file;
+    closes: #51253.
+  * `Conflicts' of intlfonts-european fixed.
+
+ -- Milan Zamazal <pdm@debian.org>  Thu, 25 Nov 1999 20:24:07 +0100
+
+intlfonts (1.1-7) unstable; urgency=low
+
+  * postrm bug fixed; closes: #49772, #49773, #49774, #49775, #49776,
+    #49777, #49778, #49779.
+  * Standards 3.1.0.
+  * Binary packages renamed from intlfonts-* to xfonts-intl-* to have
+    names consistent with other X font packages.
+  * Cleaning cleaned up.
+  * Let the /usr/doc -> /usr/share/doc transition be generated by
+    dh_installdocs; use dh_installdocs.
+  * Other small improvements in rules.
+  * Build dependencies introduced.
+  * Dependencies updated to reflect new xfonts-* package names.
+  * Lintian 1.10 satisfied.
+
+ -- Milan Zamazal <pdm@debian.org>  Tue, 16 Nov 1999 22:48:14 +0100
+
+intlfonts (1.1-6) unstable; urgency=low
+
+  * Moved to FHS.
+  * Suggest `xfonts-biznet-*' instead of `xfntil2'; closes: #43318.
+  * Standards 3.0.1.
+  * No lintian 1.9.1 errors.
+
+ -- Milan Zamazal <pdm@debian.org>  Wed, 29 Sep 1999 21:03:21 +0200
+
+intlfonts (1.1-5) unstable; urgency=low
+
+  * Very stupid bugs in postrm fixed (one should not believe too much
+    other packages when cut&pasting from them); closes: #42307.
+
+ -- Milan Zamazal <pdm@debian.org>  Mon,  2 Aug 1999 20:18:33 +0200
+
+intlfonts (1.1-4) unstable; urgency=low
+
+  * Font aliases (using update-fonts-alias) added and better
+    postinst/postrm scripts (thanks to Anthony Wong); closes: #32285.
+  * Some other aliases for Chinese fonts sent by Anthony Wong added.
+
+ -- Milan Zamazal <pdm@debian.org>  Thu, 17 Jun 1999 20:55:14 +0200
+
+intlfonts (1.1-3) unstable; urgency=low
+
+  * rules ensures buildfonts.sh is executable now (dbuild problems).
+
+ -- Milan Zamazal <pdm@debian.org>  Sun,  7 Mar 1999 20:17:37 +0100
+
+intlfonts (1.1-2) frozen unstable; urgency=medium
+
+  * Dependency on `xbase (>= 3.3-1) | xserver' changed.
+    This dependency was wrong, because:
+    - `xbase' no more contains `mkfontdir', it is in `xbase-clients'.
+    - I have heard `xbase' is an upgrade only package, which should be
+      removed after the upgrade.  Former dependency might not permit it.
+  * Dependency on xserver removed.
+  * Suggest `xfs | xserver'.
+  * Dependencies are similar to Branden's X font packages now.
+
+ -- Milan Zamazal <pdm@debian.org>  Sun,  7 Feb 1999 20:09:28 +0100
+
+intlfonts (1.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Milan Zamazal <pdm@debian.org>  Fri,  9 Oct 1998 23:43:38 +0200

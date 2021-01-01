@@ -1,0 +1,95 @@
+#!/usr/bin/make -f
+
+nameprefix := xfonts-intl
+packages := arabic asian chinese chinese-big european japanese japanese-big \
+            phonetic
+emacspackage := emacs-intl-fonts
+fontdir := /usr/share/fonts/X11/misc/
+etcfontdir := /etc/X11/fonts/X11R7/misc/
+
+build:
+	sh buildfonts.sh
+	touch build
+
+clean:
+	rm -f build
+	set -e; for p in $(packages); do \
+		dh_clean -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+	done
+	dh_clean -Pdebian/tmp-emacs -pemacs-intl-fonts
+	set -e; for s in postinst prerm postrm; do \
+		rm -f debian/*.$$s; \
+	done
+	rm -f debian/postinst.*
+	find -name '*.pcf' -o -name '*.pcf.gz' | xargs -r rm
+
+binary-indep: build
+	find debian/* -type d ! -name patches ! -name source | xargs -r rm -rf
+	set -e; for p in $(packages); do \
+		install -d debian/tmp-$$p$(fontdir); \
+	done
+	install -m 644 Asian/*.pcf.gz \
+		debian/tmp-asian$(fontdir)
+	install -m 644 Chinese/*.pcf.gz \
+		debian/tmp-chinese$(fontdir)
+	install -m 644 Chinese.BIG/*.pcf.gz \
+		debian/tmp-chinese-big$(fontdir)
+	install -m 644 European/*.pcf.gz European.BIG/*.pcf.gz \
+		Misc/*heb*.pcf.gz \
+		debian/tmp-european$(fontdir)
+	install -m 644 Japanese/*.pcf.gz \
+		debian/tmp-japanese$(fontdir)
+	install -m 644 Japanese.BIG/*.pcf.gz \
+		debian/tmp-japanese-big$(fontdir)
+	install -m 644 Misc/*arab*.pcf.gz \
+		debian/tmp-arabic$(fontdir)
+	install -m 644 Misc/*ipa*.pcf.gz \
+		debian/tmp-phonetic$(fontdir)
+	install -d debian/tmp-european$(etcfontdir)
+	install -m 644 European/fonts.alias \
+		debian/tmp-european$(etcfontdir)$(nameprefix)-european.alias
+	install -d debian/tmp-chinese$(etcfontdir)
+	install -m 644 Chinese/fonts.alias \
+		debian/tmp-chinese$(etcfontdir)$(nameprefix)-chinese.alias
+	install -d debian/tmp-japanese$(etcfontdir)
+	install -m 644 Japanese/fonts.alias \
+		debian/tmp-japanese$(etcfontdir)$(nameprefix)-japanese.alias
+	install -d debian/tmp-emacs/usr/share/emacs/fonts/bdf
+	set -e; for F in `cat debian/emacs-font-list`; do \
+		FILE=`find -not -path '*/debian/*' -name $$F`; \
+		if [ -n "$$FILE" ]; then \
+			install -m 644 $$FILE \
+				debian/tmp-emacs/usr/share/emacs/fonts/bdf/; \
+		fi; \
+		done
+	set -e; for p in $(packages); do \
+		dh_installdocs -Pdebian/tmp-$$p -p$(nameprefix)-$$p NEWS; \
+		dh_installchangelogs -Pdebian/tmp-$$p -p$(nameprefix)-$$p \
+			ChangeLog; \
+		cp debian/postinst debian/$(nameprefix)-$$p.postinst; \
+		chmod 755 debian/$(nameprefix)-$$p.postinst; \
+		dh_installxfonts -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+		dh_compress -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+		dh_md5sums -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+		dh_fixperms -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+		dh_installdeb -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+		dh_gencontrol -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+		dh_builddeb -Pdebian/tmp-$$p -p$(nameprefix)-$$p; \
+	done
+	# the Emacs package
+	dh_installdocs -Pdebian/tmp-emacs -pemacs-intl-fonts NEWS
+	dh_installchangelogs -Pdebian/tmp-emacs -pemacs-intl-fonts ChangeLog
+	set -e; for command in dh_installemacsen dh_compress dh_md5sums  \
+		dh_installdeb dh_gencontrol dh_builddeb; do \
+		$$command -Pdebian/tmp-emacs -pemacs-intl-fonts; \
+	done
+
+binary-arch: build
+
+binary: binary-indep binary-arch
+
+build-arch: build
+
+build-indep: build
+
+.PHONY: binary binary-arch binary-indep build-arch build-indep clean

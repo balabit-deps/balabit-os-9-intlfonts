@@ -1,0 +1,21 @@
+This package was debianized by Milan Zamazal <pdm@debian.org> on
+Fri,  9 Oct 1998 23:43:38 +0200.
+
+It was downloaded from ftp://ftp.gnu.org/pub/gnu/ .
+
+Copyright:
+
+Arabic:
+	arab16-0-etl.bdf	by ETL, still under development
+	arab16-1-etl.bdf	...
+	arab16-2-etl.bdf	...
+	arab24-0-etl.bdf	...
+	arab24-1-etl.bdf	...
+	arab24-2-etl.bdf	...
+
+	You can use, copy, modify, distribute these files for free.
+
+BITMAP:
+	bmp16-etl.bdf		by ETL, still under development
+
+	This font is public domain.

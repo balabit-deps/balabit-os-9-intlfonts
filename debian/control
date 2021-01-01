@@ -1,0 +1,129 @@
+Source: intlfonts
+Section: x11
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>= 9), xfonts-utils
+Standards-Version: 3.6.2
+
+Package: xfonts-intl-arabic
+Architecture: all
+Conflicts: intlfonts-arabic
+Replaces: intlfonts-arabic
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, emacs-intl-fonts
+Description: international fonts for X - Arabic
+ This package includes some Arabic fonts (digits and single and double
+ column characters). You will need these fonts if you plan to view, print,
+ or author documents written in an Arabic script.
+ .
+ The fonts are for use with the X Window System.
+
+Package: xfonts-intl-asian
+Architecture: all
+Conflicts: intlfonts-asian
+Replaces: intlfonts-asian
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, emacs-intl-fonts
+Description: international fonts for X - (south-east) Asian
+ This package includes some Indian, Lao, Thai, and Vietnamese fonts. You
+ will need these fonts if you plan to view, print, or author documents
+ written in the above languages/scripts.
+ .
+ The fonts are for use with the X Window System.
+
+Package: xfonts-intl-chinese
+Architecture: all
+Conflicts: intlfonts-chinese
+Replaces: intlfonts-chinese
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, xfonts-intl-chinese-big, xfonts-cjk, emacs-intl-fonts
+Description: international fonts for X - Chinese
+ This package includes some GB2312, GB8565-88, Big5 (ETen), and SiSheng
+ Chinese fonts. You will need these fonts if you plan to view, print, or
+ author documents written in Chinese using the above encodings.
+ .
+ The fonts are for use with the X Window System.
+
+Package: xfonts-intl-chinese-big
+Architecture: all
+Conflicts: intlfonts-chinese-big
+Replaces: intlfonts-chinese-big
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, xfonts-intl-chinese, xfonts-cjk, emacs-intl-fonts
+Description: international fonts for X - large Chinese
+ This package includes some large GB2312 Chinese fonts. You will need
+ these fonts if you plan to view, print, or author documents written in
+ Chinese using the above encoding.
+ .
+ The fonts are for use with the X Window System.
+
+Package: xfonts-intl-european
+Architecture: all
+Replaces: intlfonts-european
+Conflicts: xfntil2 (<< 2.1), intlfonts-european
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, xfonts-biznet-iso-8859-2-base, xfonts-biznet-iso-8859-2-75dpi, xfonts-biznet-iso-8859-2-100dpi, emacs-intl-fonts
+Description: international fonts for X - European
+ This package includes some ISO 8859-1 (Latin-1), ISO 8859-2 (Latin-2),
+ ISO 8859-3 (Latin-3), ISO 8859-4 (Latin-4), ISO 8859-5 (Cyrillic),
+ ISO 8859-7 (Greek), ISO 8859-8 (Hebrew), ISO 8859-9 (Latin-5), and KOI
+ (Cyrillic) fonts. One large ISO 8859-1 font is also included. You will
+ need these fonts if you plan to view, print, or author documents using
+ the above scripts/encodings.
+ .
+ The fonts are for use with the X Window System.
+
+Package: xfonts-intl-japanese
+Architecture: all
+Conflicts: intlfonts-japanese
+Replaces: intlfonts-japanese
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, xfonts-intl-japanese-big, xfonts-cjk, emacs-intl-fonts
+Description: international fonts for X - Japanese
+ This package includes some JISX0201 (Roman and Kana), JISX0208.1978,
+ JISX0208.1983, JISX0208.1990, and JISX0212.1990 (HojoKanji) Japanese
+ fonts. You will need these fonts if you plan to view, print, or author
+ documents written in Japanese using the above encodings.
+ .
+ The fonts are for use with the X Window System.
+
+Package: xfonts-intl-japanese-big
+Architecture: all
+Conflicts: intlfonts-japanese-big
+Replaces: intlfonts-japanese-big
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, xfonts-intl-japanese, xfonts-cjk, emacs-intl-fonts
+Description: international fonts for X - large Japanese
+ This package includes some large JISX0208.1983 and JISX0212.1990
+ (HojoKanji) Japanese fonts. You will need these fonts if you plan to
+ view, print, or author documents written in Japanese using the above
+ encodings.
+ .
+ The fonts are for use with the X Window System.
+
+Package: xfonts-intl-phonetic
+Architecture: all
+Conflicts: intlfonts-phonetic
+Replaces: intlfonts-phonetic
+Depends: ${misc:Depends}
+Suggests: xfs | xserver, emacs-intl-fonts
+Description: international fonts for X - International Phonetic Alphabet
+ This package includes some fonts of the International Phonetic Alphabet.
+ You will need these fonts if you plan to view, print, or author documents
+ using the International Phonetic Alphabet. IPA is used, for instance, in
+ dictionaries to represent pronunciations in a non-language-specific way.
+ .
+ The fonts are for use with the X Window System.
+
+Package: emacs-intl-fonts
+Architecture: all
+Depends: ${misc:Depends}, emacsen-common
+Suggests: xfonts-intl-arabic, xfonts-intl-asian, xfonts-intl-chinese, xfonts-intl-chinese-big, xfonts-intl-european, xfonts-intl-japanese, xfonts-intl-japanese-big, xfonts-intl-phonetic
+Enhances: emacs24
+Description: fonts to allow multilingual PostScript printing from Emacs
+ This package includes BDF fonts to print Amharic, Arabic, Cantonese,
+ Chinese, Czech, Danish, Dutch, Esperanto, Estonian, Finnish, French,
+ German, Greek, Hebrew, Hindi, Italian, Japanese, Korean, Maltese,
+ Norwegian, Polish, Russian, Slovak, Spanish, Swedish, Thai, Tigrinya,
+ Turkish, and Vietnamese text as bit-mapped PostScript. To see these
+ languages in X, you can use the xfonts-intl-* packages (among others).

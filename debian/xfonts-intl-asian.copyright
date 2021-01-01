@@ -1,0 +1,42 @@
+This package was debianized by Milan Zamazal <pdm@debian.org> on
+Fri,  9 Oct 1998 23:43:38 +0200.
+
+It was downloaded from ftp://ftp.gnu.org/pub/gnu/ .
+
+The non-free Tibetian fonts and some Thai fonts with unclear copying conditions
+were removed.
+
+Copyright:
+
+Indian:
+	ind1c24-mule.bdf	by kawabata@is.s.u-tokyo.ac.jp
+	ind24-mule.bdf		...
+	isci24-mule.bdf		...
+	ind24-uni.bdf		...
+	ind1c16-mule.bdf	resized from the above fonts
+	ind16-mule.bdf		...
+	isci16-mule.bdf		...
+	ind16-uni.bdf		...
+	...
+
+	These files are in public domain.
+
+Lao:
+	lao14-mule.bdf		by Sihattha Rasphone <sihattha@jaist.ac.jp>
+	lao16-mule.bdf		...
+	lao24-mule.bdf		...
+	...
+
+	These files are in public domain.
+
+Thai (TIS620.2529):
+	thai24.bdf		by Manop Wongsaisuwan <manop@ee.chula.edu>
+
+	You can use, copy, modify, distribute this file for free.
+
+Vietnamese (VISCII1.1)
+	visc16-etl.bdf		by ETL, still under development
+	visc24-etl.bdf		...
+	...
+	
+	You can use, copy, modify, distribute these files for free.

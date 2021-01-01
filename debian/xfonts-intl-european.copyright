@@ -1,0 +1,63 @@
+This package was debianized by Milan Zamazal <pdm@debian.org> on
+Fri,  9 Oct 1998 23:43:38 +0200.
+
+It was downloaded from ftp://ftp.gnu.org/pub/gnu/ .
+
+Copyright:
+
+*-etl.bdf		Created by ETL, still under contruction
+	cyr14-etl.bdf
+	grk14-etl.bdf
+	koi14-etl.bdf
+	lt1-14-etl.bdf
+	lt2-14-etl.bdf
+	lt3-14-etl.bdf
+	lt4-14-etl.bdf
+	lt5-14-etl.bdf
+
+	These files are in public domain.
+	
+	cyr16-etl.bdf
+	grk16-etl.bdf
+	grk24-etl.bdf
+	koi16-etl.bdf
+	koi24-etl.bdf
+	lt1-16-etl.bdf
+	lt1-16b-etl.bdf
+	lt1-16bi-etl.bdf
+	lt1-16i-etl.bdf
+	lt1-18-etl.bdf
+	lt1-18.bdf
+	lt1-18b-etl.bdf
+	lt1-18bi-etl.bdf
+	lt1-18i-etl.bdf
+	lt1-24-etl.bdf
+	lt1-24b-etl.bdf
+	lt1-24bi-etl.bdf
+	lt1-24i-etl.bdf
+	lt2-16-etl.bdf
+	lt2-24-etl.bdf
+	lt3-16-etl.bdf
+	lt3-24-etl.bdf
+	lt4-16-etl.bdf
+	lt4-24-etl.bdf
+	lt5-16-etl.bdf
+	lt5-24-etl.bdf
+	
+	You can use, copy, modify, distribute these files for free.	
+
+Hebrew (ISO8859-8):
+	heb14-etl.bdf		by ETL, still under development
+
+	This file is in public domain.
+	
+Hebrew (ISO8859-8):
+	heb16-etl.bdf		by ETL, still under development
+	heb24-etl.bdf		...
+
+	You can use, copy, modify, distribute these files for free.
+
+Latin1 (ISO8859-1) big
+	lt1-40-etl.bdf		created from lt1-24-etl.bdf by bdfresize
+
+	You can use, copy, modify, distribute this file for free.

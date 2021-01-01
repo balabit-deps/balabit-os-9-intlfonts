@@ -1,0 +1,14 @@
+This package provides BDF fonts for Emacs PostScript printing of non-ASCII
+characters.  To use the fonts for printing, set the `ps-multibyte-buffer' Emacs
+variable.
+
+Please note the upstream package contains some fonts with unclear licensing
+status.  These fonts were removed from the package, see the `copyright' file
+for more details.
+
+Additionally, to reduce disk space usage on mirrors and your machines, only
+fonts used by ps-mule.el are included from the original intlfonts package.
+Please file a bug against the `emacs-intl-fonts' package if any of the free
+fonts necessary for printing is missing.
+
+ -- Milan Zamazal <pdm@debian.org>, Thu Jul 24 08:25:13 2003

@@ -1,0 +1,72 @@
+Description: Patches applied by Debian
+
+--- a/Chinese/fonts.alias
++++ b/Chinese/fonts.alias
+@@ -1,3 +1,10 @@
+ -ETL-Fixed-Medium-R-Normal--24-240-72-72-C-120-SiSheng_CWNN-0 -ETL-Fixed-Medium-R-Normal--24-240-72-72-C-120-OMRON_UDC_ZH-0
+ -ETL-Fixed-Medium-R-Normal--16-160-72-72-C-80-SiSheng_CWNN-0 -ETL-Fixed-Medium-R-Normal--16-160-72-72-C-80-OMRON_UDC_ZH-0
+ -ETL-Fixed-Medium-R-Normal--14-140-72-72-C-70-SiSheng_CWNN-0 -ETL-Fixed-Medium-R-Normal--14-140-72-72-C-70-OMRON_UDC_ZH-0
++-eten-fixed-medium-r-normal--16-150-75-75-c-160-big5-0 -eten-fixed-medium-r-normal--16-150-75-75-c-160-big5.eten-0
++-eten-fixed-medium-r-normal--24-230-75-75-c-240-big5-0 -eten-fixed-medium-r-normal--24-230-75-75-c-240-big5.eten-0
++taipei16 -eten-fixed-medium-r-normal--16-150-75-75-c-160-big5.eten-0
++taipei24 -eten-fixed-medium-r-normal--24-230-75-75-c-240-big5.eten-0
++-guobiao-song-medium-r-normal--16-160-72-72-c-160-gb8565.88-0 -guobiao-song-medium-r-normal--16-160-72-72-c-160-gb2312.80&gb8565.88-0
++-guobiao-song-medium-r-normal--16-160-72-72-c-160-gb2312.80-0 -guobiao-song-medium-r-normal--16-160-72-72-c-160-gb2312.80&gb8565.88-0
++guobiao16 -guobiao-song-medium-r-normal--16-160-72-72-c-160-gb2312.80&gb8565.88-0
+--- a/European/lt1-18-etl.bdf
++++ b/European/lt1-18-etl.bdf
+@@ -19,7 +19,7 @@
+ RESOLUTION_X 72
+ RESOLUTION_Y 72 
+ SPACING "C"
+-AVERAGE_WIDTH 80
++AVERAGE_WIDTH 90
+ CHARSET_REGISTRY "ISO8859"
+ CHARSET_ENCODING "1"
+ FONT_ASCENT 15
+--- a/European/lt1-18b-etl.bdf
++++ b/European/lt1-18b-etl.bdf
+@@ -19,7 +19,7 @@
+ RESOLUTION_X 72
+ RESOLUTION_Y 72 
+ SPACING "C"
+-AVERAGE_WIDTH 80
++AVERAGE_WIDTH 90
+ CHARSET_REGISTRY "ISO8859"
+ CHARSET_ENCODING "1"
+ FONT_ASCENT 15
+--- a/European/lt1-18bi-etl.bdf
++++ b/European/lt1-18bi-etl.bdf
+@@ -19,7 +19,7 @@
+ RESOLUTION_X 72
+ RESOLUTION_Y 72 
+ SPACING "C"
+-AVERAGE_WIDTH 80
++AVERAGE_WIDTH 90
+ CHARSET_REGISTRY "ISO8859"
+ CHARSET_ENCODING "1"
+ FONT_ASCENT 15
+--- a/European/lt1-18i-etl.bdf
++++ b/European/lt1-18i-etl.bdf
+@@ -19,7 +19,7 @@
+ RESOLUTION_X 72
+ RESOLUTION_Y 72 
+ SPACING "C"
+-AVERAGE_WIDTH 80
++AVERAGE_WIDTH 90
+ CHARSET_REGISTRY "ISO8859"
+ CHARSET_ENCODING "1"
+ FONT_ASCENT 15
+--- /dev/null
++++ b/buildfonts.sh
+@@ -0,0 +1,10 @@
++#!/bin/sh
++
++DIRS="Asian Chinese Chinese.BIG Ethiopic European European.BIG"
++DIRS="$DIRS Japanese Japanese.BIG Misc"
++
++for BDF in $(find $DIRS -name '*.bdf'); do
++  PCF=${BDF%bdf}pcf
++  bdftopcf -o $PCF $BDF
++  gzip -9n $PCF
++done

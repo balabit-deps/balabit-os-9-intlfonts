@@ -1,0 +1,14 @@
+This package was debianized by Milan Zamazal <pdm@debian.org> on
+Fri,  9 Oct 1998 23:43:38 +0200.
+
+It was downloaded from ftp://ftp.gnu.org/pub/gnu/ .
+
+The CNS Plane 1..7 fonts with unclear copying conditions were removed.
+
+Copyright:
+
+Chinese simplified (GB2312.1980):
+	cc40s.bdf	created from cc48s.bdf by bdfresize
+	cc48s.bdf	by cai@neurophys.wisc.edu
+
+	These files are in public domain.

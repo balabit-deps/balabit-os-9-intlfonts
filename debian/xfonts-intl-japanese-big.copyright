@@ -1,0 +1,28 @@
+This package was debianized by Milan Zamazal <pdm@debian.org> on
+Fri,  9 Oct 1998 23:43:38 +0200.
+
+It was downloaded from ftp://ftp.gnu.org/pub/gnu/ .
+
+Copyright:
+
+JISX0208.1983 (JIS-Kanji) fonts
+	kanji32.bdf	created from Watanabe-font
+	kanji48.bdf	created from Watanabe-font
+	
+	These files are in public domain.
+
+JISX0212 (JIS-Kanji supplementary) fonts
+	jisksp40.bdf	by Koichi Yasuoka <yasuoka@kudpc.kyoto-u.ac.jp>
+	
+  Copyright Adobe Systems Incorporated; Linotype; Central Bureau of Standards,
+  Ministry of Economy, ROC
+ 
+  Permission to use, copy, modify, and distribute this software and
+  its documentation for any purpose and without fee is hereby granted,
+  provided that the above copyright notices appear in all copies and
+  that both those copyright notices and this permission notice appear
+  in supporting documentation, and that the names of Adobe Systems,
+  Linotype, and CBS not be used in advertising or publicity pertaining
+  to distribution of the software without specific, written prior
+  permission.
+ 
